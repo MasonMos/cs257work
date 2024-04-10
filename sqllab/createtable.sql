@@ -3,7 +3,7 @@ CREATE TABLE earthquakes (
   quaketime timestamptz,
   latitude real,
   longitude real,
-  mag real,
+  magnitude real,
   id text,
   quaketype text
 );
