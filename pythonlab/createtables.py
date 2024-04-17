@@ -24,6 +24,7 @@ cityTable = """DROP TABLE IF EXISTS cities;
 stateTable = """DROP TABLE IF EXISTS states;
             CREATE TABLE states (
             Code text,
+            state text
             );"""
 cur.execute(cityTable)
 cur.execute(stateTable)
