@@ -1,4 +1,4 @@
-DROP TABLES IF EXISTS cities;
+DROP TABLE IF EXISTS cities;
  CREATE TABLE cities (
   City text,
   State text,

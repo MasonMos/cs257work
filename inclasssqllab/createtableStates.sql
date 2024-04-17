@@ -3,4 +3,4 @@ DROP TABLE IF EXISTS states;
     Code text,
     State text,
     Population int
- )
+ );
