@@ -43,9 +43,7 @@ def test_query_largest_city():
     row_list = cur.fetchall()
 
     for row in row_list:
-        print(row[1])
-
-    conn.commit()
+        print(row[0] + " " + row[1])
 
     return None
 
