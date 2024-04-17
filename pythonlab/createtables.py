@@ -24,7 +24,8 @@ cityTable = """DROP TABLE IF EXISTS cities;
 stateTable = """DROP TABLE IF EXISTS states;
             CREATE TABLE states (
             Code text,
-            state text,
-            state_population int
             );"""
-cur.execute(cityTable, stateTable)
+cur.execute(cityTable)
+cur.execute(stateTable)
+
+conn.commit()
