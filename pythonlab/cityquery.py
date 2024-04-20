@@ -42,9 +42,14 @@ def test_query_largest_city():
 
     row_list = cur.fetchall()
 
-    for row in row_list:
-        print(row)
+    cityPop = 0
 
+    for row in row_list:
+        if (row[1] > cityPop):
+            cityPop = row[1]
+            largestCityPop = row[0]
+        
+    print(largestCityPop)
     return None
 
 
