@@ -63,13 +63,9 @@ def test_query_smallest_city_mn():
     
     cur = conn.cursor()
 
-    sql1 = """SELECT * FROM cities
-            JOIN states;"""
-    
-    sql2 = """CREATE VIEW cities_states AS SELECT city, city_population, code, state
-            WHERE code = 'MN' """
+    sql1 = """SELECT * FROM cities, states WHERE code = 'MN' ;"""
 
-    cur.execute(sql1, sql2)
+    cur.execute(sql1)
 
     row_list = cur.fetchall()
 
