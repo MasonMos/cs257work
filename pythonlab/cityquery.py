@@ -77,8 +77,8 @@ def test_query_smallest_city_mn():
             smallest_row = row[2]
             smallest_row_name = row[0]
 
-    print(smallest_row_name)
-    return None
+    return smallest_row_name
+
 
 
 
