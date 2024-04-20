@@ -45,8 +45,8 @@ def test_query_largest_city():
     cityPop = 0
 
     for row in row_list:
-        if (row[2] > cityPop):
-            cityPop = row[2]
+        if (row[1] > cityPop):
+            cityPop = row[1]
             largestCityPop = row[0]
         
     print(largestCityPop)
@@ -82,8 +82,8 @@ def test_query_smallest_city_mn():
 
 
 
-print( test_query_northfield() )
-print( test_query_largest_city() )
+'print( test_query_northfield() )'
+'print( test_query_largest_city() )'
 print( test_query_smallest_city_mn() )
     
 
