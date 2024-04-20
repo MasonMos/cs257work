@@ -63,17 +63,17 @@ def test_query_smallest_city_mn():
     
     cur = conn.cursor()
 
-    sql1 = """SELECT * FROM cities, states WHERE code = 'MN' ;"""
+    sql1 = """SELECT * FROM cities WHERE states = 'Minnesota' ;"""
 
     cur.execute(sql1)
 
     row_list = cur.fetchall()
 
-    cityPop = row[1]
+    smallestPop = row[1]
 
     for row in row_list:
-        if (cityPop <= row[1]):
-            cityPop = row[1]
+        if (startingPop <= row[1]):
+            startingPop = row[1]
             smallestCityPop = row[0]
 
     print(smallestCityPop)
