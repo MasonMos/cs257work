@@ -45,8 +45,8 @@ def test_query_largest_city():
     cityPop = 0
 
     for row in row_list:
-        if (row[1] > cityPop):
-            cityPop = row[1]
+        if (row[2] > cityPop):
+            cityPop = row[2]
             largestCityPop = row[0]
         
     print(largestCityPop)
@@ -70,11 +70,11 @@ def test_query_smallest_city_mn():
     row_list = cur.fetchall()
     first_row = cur.fetchone()
 
-    smallest_row = first_row[1]
+    smallest_row = first_row[2]
 
     for row in row_list:
-        if (smallest_row >= row[1]):
-            smallest_row = row[1]
+        if (smallest_row >= row[2]):
+            smallest_row = row[2]
             smallest_row_name = row[0]
 
     print(smallest_row_name)
