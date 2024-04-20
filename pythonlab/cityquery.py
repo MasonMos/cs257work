@@ -70,11 +70,11 @@ def test_query_smallest_city_mn():
     row_list = cur.fetchall()
     first_row = cur.fetchone()
 
-    smallest_row = first_row[2]
+    smallest_row = first_row[1]
 
     for row in row_list:
-        if (smallest_row >= row[2]):
-            smallest_row = row[2]
+        if (smallest_row >= row[1]):
+            smallest_row = row[1]
             smallest_row_name = row[0]
 
     return smallest_row_name
