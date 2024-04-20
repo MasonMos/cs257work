@@ -69,11 +69,10 @@ def test_query_smallest_city_mn():
 
     row_list = cur.fetchall()
 
-    smallestPop = row[1]
-
     for row in row_list:
+        smallestPop = row[1]
         if (startingPop <= row[1]):
-            startingPop = row[1]
+            startingPop = smallestCityPop
             smallestCityPop = row[0]
 
     print(smallestCityPop)
