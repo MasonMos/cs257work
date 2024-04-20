@@ -87,7 +87,7 @@ def test_query_smallest_city_mn():
 
 print( test_query_northfield() )
 print( test_query_largest_city() )
-print( test_query_smallest_city_mn)
+print( test_query_smallest_city_mn() )
     
 
 
