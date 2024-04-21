@@ -156,7 +156,7 @@ def test_query_search():
     totalCityPop = 0
 
     for row in row_list:
-        print(row_list)
+        print(row[2])
     
     return totalCityPop
 
