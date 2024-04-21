@@ -149,7 +149,7 @@ def test_query_search():
 
     stateInput = input("Pick a state or state abbreviation:")
 
-    cur.execute(sql, [stateInput])
+    cur.execute(sql, (stateInput, stateInput))
 
     row_list = cur.fetchall()
 
