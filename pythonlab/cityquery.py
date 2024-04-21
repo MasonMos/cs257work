@@ -132,6 +132,20 @@ def test_query_extereme_points():
 
     return None
 
+def test_query_search():
+
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="mosesm2",
+        user="mosesm2",
+        password="field599farm")
+    
+    cur = conn.cursor()
+
+    sql = "SELECT * FROM cities;"
+
+    cur.execute(sql)
 
 
 
