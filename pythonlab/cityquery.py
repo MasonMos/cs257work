@@ -154,11 +154,15 @@ def test_query_search():
     row_list = cur.fetchall()
 
     totalCityPop = 0
+    stateName = ""
 
     for row in row_list:
-        print(row[2])
-    
-    return totalCityPop
+        totalCityPop += row[2]
+        stateName = row[1]
+        
+
+    print("Here is the total population of all cities in " + stateName + ": " + totalCityPop)
+    return None
 
 
 
