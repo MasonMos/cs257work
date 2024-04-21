@@ -143,9 +143,22 @@ def test_query_search():
     
     cur = conn.cursor()
 
-    sql = "SELECT * FROM cities;"
+    sql = """SELECT city, cities.state, city_population, code 
+    from cities join states 
+    on states.state = cities.state WHERE code = %s OR cities.state = %s;"""
 
-    cur.execute(sql)
+    stateInput = input("Pick a state or state abbreviation:")
+
+    cur.execute(sql, [stateInput])
+
+    row_list = cur.fetchall()
+
+    totalCityPop = 0
+    for row in row_list:
+        totalCityPop += row[2]
+    
+    return totalCityPop
+
 
 
 
@@ -155,6 +168,7 @@ print( test_query_northfield() )
 print( "The largest city in the US is " + test_query_largest_city() )
 print( "The smallest city in Minnesota is " + test_query_smallest_city_mn() )
 test_query_extereme_points()
+test_query_search()
     
 
 
