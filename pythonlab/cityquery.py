@@ -45,12 +45,12 @@ def test_query_largest_city():
     cityPop = 0
 
     for row in row_list:
-        if (row[1] > cityPop):
-            cityPop = row[1]
+        if (row[2] > cityPop):
+            cityPop = row[2]
             largestCityPop = row[0]
         
-    print(largestCityPop)
-    return None
+    
+    return largestCityPop
 
 def test_query_smallest_city_mn():
 
@@ -79,12 +79,67 @@ def test_query_smallest_city_mn():
 
     return smallest_row_name
 
+def test_query_extereme_points():
+
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="mosesm2",
+        user="mosesm2",
+        password="field599farm")
+    
+    cur = conn.cursor()
+
+    sql = "SELECT * FROM cities;"
+
+    cur.execute(sql)
+
+    row_list = cur.fetchall()
+
+    northernPoint = 0
+    easternPoint = 0
+
+    for row in row_list:
+        if(row[3] > northernPoint):
+            northernPoint = row[3]
+            northernPointName = row[0]
+    
+    for row in row_list:
+        if(row[4] > easternPoint):
+            easternPoint = row[4]
+            easternPointName = row[0]
+
+    westernPoint = row_list[0][4]
+    westernPointName = row_list[0][0]
+
+    for row in row_list:
+        if (westernPoint >= row[4]):
+            westernPoint = row[4]
+            westernPointName = row[0]
+    
+    southernPoint = row_list[0][3]
+    southernPointName = row_list[0][0]
+
+    for row in row_list:
+        if (southernPoint >= row[3]):
+            southernPoint = row[3]
+            southernPointName = row[0]
+    
+    print("This is the most eastern city: " + easternPointName)
+    print("This is the most western city: " + westernPointName)
+    print("This is the most northern city: " + northernPointName)
+    print("This is the most southern city: " + southernPointName)
+
+    return None
 
 
 
-'print( test_query_northfield() )'
-'print( test_query_largest_city() )'
-print( test_query_smallest_city_mn() )
+
+
+print( test_query_northfield() )
+print( "The largest city in the US is " + test_query_largest_city() )
+print( "The smallest city in Minnesota is " + test_query_smallest_city_mn() )
+test_query_extereme_points()
     
 
 
