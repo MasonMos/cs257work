@@ -1,7 +1,7 @@
 import psycopg2
 
 # This function checks for northfield data.
-def test_query_northfield():
+def testQueryNorthfield():
 
     conn = psycopg2.connect(
         host="localhost",
@@ -25,7 +25,7 @@ def test_query_northfield():
 
     return row
 
-def test_query_largest_city():
+def testQueryLargestCity():
 
     conn = psycopg2.connect(
         host="localhost",
@@ -40,11 +40,11 @@ def test_query_largest_city():
 
     cur.execute(sql)
 
-    row_list = cur.fetchall()
+    rowList = cur.fetchall()
 
     cityPop = 0
 
-    for row in row_list:
+    for row in rowList:
         if (row[1] > cityPop):
             cityPop = row[1]
             largestCityPop = row[0]
@@ -52,7 +52,7 @@ def test_query_largest_city():
     
     return largestCityPop
 
-def test_query_smallest_city_mn():
+def testQuerySmallestCityMn():
 
     conn = psycopg2.connect(
         host="localhost",
@@ -67,19 +67,19 @@ def test_query_smallest_city_mn():
 
     cur.execute(sql)
 
-    row_list = cur.fetchall()
+    rowList = cur.fetchall()
 
-    smallest_row = row_list[0][2]
-    smallest_row_name = row_list[0][0]
+    smallestRow = rowList[0][2]
+    smallestRowName = rowList[0][0]
 
-    for row in row_list:
-        if (smallest_row >= row[2]):
-            smallest_row = row[2]
-            smallest_row_name = row[0]
+    for row in rowList:
+        if (smallestRow >= row[2]):
+            smallestRow = row[2]
+            smallestRowName = row[0]
 
-    return smallest_row_name
+    return smallestRowName
 
-def test_query_extereme_points():
+def testQueryExteremePoints():
 
     conn = psycopg2.connect(
         host="localhost",
@@ -94,33 +94,33 @@ def test_query_extereme_points():
 
     cur.execute(sql)
 
-    row_list = cur.fetchall()
+    rowList = cur.fetchall()
 
-    northernPoint = row_list[0][3]
+    northernPoint = rowList[0][3]
     northernPointName = ""
-    easternPoint = row_list[0][4]
+    easternPoint = rowList[0][4]
     easternPointName = ""
-    westernPoint = row_list[0][4]
+    westernPoint = rowList[0][4]
     westernPointName = ""
-    southernPoint = row_list[0][3]
+    southernPoint = rowList[0][3]
     southernPointName = ""
 
-    for row in row_list:
+    for row in rowList:
         if(row[3] > northernPoint):
             northernPoint = row[3]
             northernPointName = row[0]
     
-    for row in row_list:
+    for row in rowList:
         if(row[4] > easternPoint):
             easternPoint = row[4]
             easternPointName = row[0]
 
-    for row in row_list:
+    for row in rowList:
         if (westernPoint >= row[4]):
             westernPoint = row[4]
             westernPointName = row[0]
     
-    for row in row_list:
+    for row in rowList:
         if (southernPoint >= row[3]):
             southernPoint = row[3]
             southernPointName = row[0]
@@ -132,7 +132,7 @@ def test_query_extereme_points():
 
     return None
 
-def test_query_search():
+def testQuerySearch():
 
     conn = psycopg2.connect(
         host="localhost",
@@ -168,11 +168,11 @@ def test_query_search():
 
 
 
-print( test_query_northfield() )
-print( "The largest city in the US is " + test_query_largest_city() )
-print( "The smallest city in Minnesota is " + test_query_smallest_city_mn() )
-test_query_extereme_points()
-test_query_search()
+print( testQueryNorthfield() )
+print( "The largest city in the US is " + testQueryLargestCity() )
+print( "The smallest city in Minnesota is " + testQuerySmallestCityMn() )
+testQueryExteremePoints()
+testQuerySearch()
     
 
 
