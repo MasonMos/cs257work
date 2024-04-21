@@ -63,7 +63,7 @@ def test_query_smallest_city_mn():
     
     cur = conn.cursor()
 
-    sql = "SELECT * FROM cities WHERE city_state = 'Minnesota' ;"
+    sql = "SELECT * FROM cities WHERE state = 'Minnesota' ;"
 
     cur.execute(sql)
 
