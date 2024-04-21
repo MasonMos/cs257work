@@ -160,8 +160,7 @@ def test_query_search():
         totalCityPop += row[2]
         stateName = row[1]
         
-
-    print("Here is the total population of all cities in " + stateName + ": " + totalCityPop)
+    print("Here is the total population of all cities in " + stateName + ": " + str(totalCityPop))
     return None
 
 
