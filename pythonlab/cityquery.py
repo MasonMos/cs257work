@@ -96,8 +96,14 @@ def test_query_extereme_points():
 
     row_list = cur.fetchall()
 
-    northernPoint = 0
-    easternPoint = 0
+    northernPoint = row_list[0][3]
+    northernPointName = row_list[0][0]
+    easternPoint = row_list[0][4]
+    easternPointName = row_list[0][0]
+    westernPoint = row_list[0][4]
+    westernPointName = row_list[0][0]
+    southernPoint = row_list[0][3]
+    southernPointName = row_list[0][0]
 
     for row in row_list:
         if(row[3] > northernPoint):
@@ -109,17 +115,11 @@ def test_query_extereme_points():
             easternPoint = row[4]
             easternPointName = row[0]
 
-    westernPoint = row_list[0][4]
-    westernPointName = row_list[0][0]
-
     for row in row_list:
         if (westernPoint >= row[4]):
             westernPoint = row[4]
             westernPointName = row[0]
     
-    southernPoint = row_list[0][3]
-    southernPointName = row_list[0][0]
-
     for row in row_list:
         if (southernPoint >= row[3]):
             southernPoint = row[3]
