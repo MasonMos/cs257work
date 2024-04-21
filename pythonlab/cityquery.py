@@ -154,8 +154,9 @@ def test_query_search():
     row_list = cur.fetchall()
 
     totalCityPop = 0
+
     for row in row_list:
-        totalCityPop += row[2]
+        print(row_list)
     
     return totalCityPop
 
