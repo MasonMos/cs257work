@@ -145,7 +145,7 @@ def test_query_search():
 
     sql = """SELECT city, cities.state, city_population, code 
     from cities join states 
-    on states.state = cities.state WHERE code = 'MN' OR cities.state = 'Minnesota';"""
+    on states.state = cities.state WHERE code = '%s' OR cities.state = '%s';"""
 
     stateInput = input("Pick a state or state abbreviation:")
 
