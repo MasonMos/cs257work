@@ -39,9 +39,9 @@ def state_population(state):
 
     cur.execute(sql, [state])
 
-    row_list = cur.fetchall()
+    row = cur.fetchone()
 
-    return str(row_list[2])
+    return str(row_list[1])
 
 if __name__ == '__main__':
     my_port = 5120
