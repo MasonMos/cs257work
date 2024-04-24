@@ -25,7 +25,7 @@ def my_sum(num1, num2):
     return str(sum)
 
 @app.route('/pop/<state>')
-def state_population(code):
+def state_population(state):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -37,7 +37,7 @@ def state_population(code):
 
     sql = "SELECT * FROM states WHERE code = %s;"
 
-    cur.execute(sql, (str(code)))
+    cur.execute(sql, (str(state)))
 
     row_list = cur.fetchall()
 
