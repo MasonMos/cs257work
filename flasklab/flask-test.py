@@ -41,7 +41,7 @@ def state_population(state):
 
     row = cur.fetchone()
 
-    return str(row_list[1])
+    return str(row[1])
 
 if __name__ == '__main__':
     my_port = 5120
