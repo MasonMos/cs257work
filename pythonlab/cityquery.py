@@ -23,7 +23,7 @@ def testQueryNorthfield():
 
     conn.commit()
 
-    return row
+    return None
 
 def testQueryLargestCity():
 
