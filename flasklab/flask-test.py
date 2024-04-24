@@ -35,22 +35,13 @@ def state_population(state):
     
     cur = conn.cursor()
 
-    sql = """SELECT city, cities.state, city_population, code 
-    from cities join states 
-    on states.state = cities.state WHERE code = %s OR cities.state = %s;"""
+    sql = """SELECT * FROM states WHERE code = %s;"""
 
-    stateInput = input("Pick a state or state abbreviation:")
-
-    cur.execute(sql, (stateInput, stateInput))
+    cur.execute(sql, (state))
 
     row_list = cur.fetchall()
 
-    totalCityPop = 0
-    stateName = ""
-
-    for row in row_list:
-        totalCityPop += row[2]
-        stateName = row[1]
+    return row_list[2]
 
 if __name__ == '__main__':
     my_port = 5120
