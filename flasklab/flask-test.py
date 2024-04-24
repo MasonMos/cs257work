@@ -37,7 +37,7 @@ def state_population(code):
 
     sql = "SELECT * FROM states WHERE code = %s;"
 
-    cur.execute(sql, code)
+    cur.execute(sql, (str(code)))
 
     row_list = cur.fetchall()
 
