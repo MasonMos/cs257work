@@ -37,11 +37,11 @@ def state_population(state):
 
     sql = "SELECT * FROM states WHERE code = %s;"
 
-    cur.execute(sql, str(state))
+    cur.execute(sql, (state))
 
     row_list = cur.fetchall()
 
-    return row_list[2]
+    return str(row_list[2])
 
 if __name__ == '__main__':
     my_port = 5120
