@@ -23,7 +23,7 @@ def testQueryNorthfield():
 
     conn.commit()
 
-    return None
+    return row
 
 def testQueryLargestCity():
 
@@ -168,7 +168,7 @@ def testQuerySearch():
 
 
 
-print( testQueryNorthfield() )
+testQueryNorthfield()
 print( "The largest city in the US is " + testQueryLargestCity() )
 print( "The smallest city in Minnesota is " + testQuerySmallestCityMn() )
 testQueryExteremePoints()
