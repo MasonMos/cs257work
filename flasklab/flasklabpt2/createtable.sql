@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS videogames;
-    CREATE TABLES videogames (
+    CREATE TABLE videogames (
         Game text,
         Console text,
         Year real,
