@@ -20,7 +20,7 @@ def randomGame():
     cur = conn.cursor()
 
     sql = """SELECT * FROM videogames  
-            ORDER BY RAND()  
+            ORDER BY RANDOM()  
             LIMIT 1;"""
 
     cur.execute(sql)
