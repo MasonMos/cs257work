@@ -9,7 +9,7 @@ def startScreen():
     return render_template("index.html")
 
 @app.route('/rand')
-def state_population():
+def randomGame():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -19,15 +19,15 @@ def state_population():
     
     cur = conn.cursor()
 
-    sql = "SELECT * FROM videogames;"
+    sql = """SELECT column FROM table  
+            ORDER BY RAND()  
+            LIMIT 1;"""
 
     cur.execute(sql)
 
     row = cur.fetchone()
 
     return render_template("random.html", randGame = str(row[0]))
-
-
 
 if __name__ == '__main__':
     my_port = 5120
