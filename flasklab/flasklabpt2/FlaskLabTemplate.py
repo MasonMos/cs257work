@@ -19,13 +19,15 @@ def state_population():
     
     cur = conn.cursor()
 
-    sql = "SELECT * FROM states WHERE code = %s;"
+    sql = "SELECT * FROM videogames;"
 
-    cur.execute(sql, [state])
+    cur.execute(sql)
 
     row = cur.fetchone()
 
-    return str(row[2])
+    return render_template("random.html", randGame = str(row[0]))
+
+
 
 if __name__ == '__main__':
     my_port = 5120
