@@ -1,8 +1,7 @@
 DROP TABLE IF EXISTS cities;
  CREATE TABLE cities (
   City text,
-  State text,
-  Population int,
+  city_population int,
   Latitude real,
   Longitude real
 );
