@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/csswebsite.css">
+
+    <script src="/static/csswebsite.js"></script>
+</head>
+
+<body>
+
+    <h1 class = "title-class" id="title"> 
+        Random Video Game Generator
+    </h1>
+
+    <form class="center-para">
+    <label for="Genre">Choose a genre:</label>
+
+    <select name="Genre" id="Genre">
+        <option value="Action">Action</option>
+        <option value="Platform">Platform</option>
+        <option value="Shooter">Shooter</option>
+        <option value="Role-Playing">Role-Playing</option>
+        <option value="Racing">Racing</option>
+        <option value="Puzzle">Puzzle</option>
+        <option value="Fighting">Fighting</option>
+        <option value="Simulation">Simulation</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Misc">Misc</option>
+    </select>
+    </form>
+
+    <div class="button">
+    <button type="submit" class="submitButton" onclick="submitCompiledLink()">
+        Generate a video game!
+    </button>
+</div>
+
+</body>
+
+</html>
