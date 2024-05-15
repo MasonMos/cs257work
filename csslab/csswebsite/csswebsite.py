@@ -19,9 +19,9 @@ def randomGameGenre(genre):
     
     cur = conn.cursor()
 
-    sql = """SELECT * FROM videogames
+    sql = """SELECT * FROM videogames WHERE Category = %s
             ORDER BY RANDOM()  
-            LIMIT 1 WHERE Category = %s;"""
+            LIMIT 1;"""
 
     cur.execute(sql,[genre])
 
