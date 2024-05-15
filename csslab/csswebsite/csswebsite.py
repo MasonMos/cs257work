@@ -27,7 +27,7 @@ def randomGameGenre(genre):
 
     row = cur.fetchone()
 
-    return render_template("random.html", randGame = str(row[0]), console = str(row[1]))
+    return render_template("random.html", randGame = str(row[0]), console = str(row[1]), genre = str(row[3]))
 
 if __name__ == '__main__':
     my_port = 5120
