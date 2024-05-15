@@ -6,10 +6,25 @@
 
 .center-para{
     color: blue;
-    font-family: OCR A Std, monospace;
+    font-family: OCR A Std, monospace; 
   }
 
 .button{
 font-size: large;
 }
 
+.title{
+    text-align: center;
+    color: indigo;
+    font-size: large;
+}
+
+.sub-title{
+  text-align: center;
+  color: red;
+}
+
+.center-para{
+  font-size: small;
+  font-family: Andale Mono, sans-serif;
+}
