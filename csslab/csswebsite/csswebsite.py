@@ -23,7 +23,7 @@ def randomGameGenre(genre):
             ORDER BY RANDOM()  
             LIMIT 1 WHERE Category = %s;"""
 
-    cur.execute(sql,("genre"))
+    cur.execute(sql,[genre])
 
     row = cur.fetchone()
 
